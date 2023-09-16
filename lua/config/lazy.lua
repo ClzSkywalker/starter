@@ -15,22 +15,7 @@ return function(opts)
         "LazyVim/LazyVim",
         import = "lazyvim.plugins",
         opts = {
-          colorscheme = function()
-            local theme = ""
-            if string.match(opts.nv.colorscheme, "github") ~= nil then
-              theme = "github"
-            else
-              if string.match(opts.nv.colorscheme, "one[dark|light]") ~= nil then
-                theme = "onedark"
-              end
-            end
-            local has_theme, nvim_theme = pcall(require, "plugins.extras.theme." .. theme)
-            if has_theme then
-              nvim_theme.setup(opts.nv.colorscheme)
-            else
-              require("tokyonight").load() -- fallback to tokyo night if not otherwise specified
-            end
-          end,
+          colorscheme = opts.nv.colorscheme,
           icons = {
             kinds = {
               Codeium = " "
@@ -59,23 +44,31 @@ return function(opts)
       { import = "lazyvim.plugins.extras.lang.terraform", enabled = opts.nv.lang.terraform },
       { import = "lazyvim.plugins.extras.lang.tex", enabled = opts.nv.lang.tex },
       { import = "lazyvim.plugins.extras.lang.yaml", enabled = opts.nv.lang.yaml },
+      { import = "plugins.extras.lang.nodejs", enabled = opts.nv.lang.nodejs },
       -- lazyvim test core extension modules
       { import = "lazyvim.plugins.extras.test.core", enabled = opts.nv.test_support },
       -- lazyvim UI extension modules
-      { import = "lazyvim.plugins.extras.ui.edgy" },
+      -- { import = "lazyvim.plugins.extras.ui.edgy" },
       { import = "lazyvim.plugins.extras.ui.mini-animate" },
+      -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
       -- lazyvim project extension modules
       { import = "lazyvim.plugins.extras.util.project" },
       -- import/override with your plugins
       { import = "plugins" },
       -- lazyvim codeium extension modules
-      { import = "plugins.extras.coding.codeium", enabled = opts.nv.codeium_support },
-      -- custom language specific extension modules
-      { import = "plugins.extras.lang.nodejs", enabled = opts.nv.lang.nodejs },
-      -- lazyvim coverage extension modules
-      -- { import = "plugins.extras.test.coverage", enabled = opts.nv.lang.coverage_support },
-      -- lazyvim REST extension modules
-      -- { import = "plugins.extras.util.rest", enabled = opts.nv.lang.rest_support },
+      -- code
+      { import = "plugins.extras.code.cmp" },
+      { import = "plugins.extras.code.lsp" },
+      { import = "plugins.extras.code.neotest" },
+      { import = "plugins.extras.code.outline" },
+      { import = "plugins.extras.code.tree_sitter" },
+      -- ui
+      { import = "plugins.extras.ui.bufferline" },
+      { import = "plugins.extras.ui.dashboard" },
+      { import = "plugins.extras.ui.lualine" },
+      { import = "plugins.extras.ui.neo-tree" },
+      { import = "plugins.extras.ui.noice" },
+      { import = "plugins.extras.ui.scrollview" },
     },
     defaults = {
       -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

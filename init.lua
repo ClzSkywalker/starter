@@ -1,7 +1,7 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")({
     nv = {
-        colorscheme = "slate", -- colorscheme setting for either onedark.nvim or github-theme
+        colorscheme = "desert", -- colorscheme setting for either onedark.nvim or github-theme
         codeium_support = false, -- enable codeium extension
         copilot_support = false, -- enable copilot extension
         coverage_support = true, -- enable coverage extension
