@@ -16,22 +16,7 @@ return function(opts)
             "LazyVim/LazyVim",
             import = "lazyvim.plugins",
             opts = {
-                colorscheme = function()
-                    local theme = ""
-                    if string.match(opts.nv.colorscheme, "github") ~= nil then
-                        theme = "github"
-                    else
-                        if string.match(opts.nv.colorscheme, "one[dark|light]") ~= nil then
-                            theme = "onedark"
-                        end
-                    end
-                    local has_theme, nvim_theme = pcall(require, "plugins.extras.theme." .. theme)
-                    if has_theme then
-                        nvim_theme.setup(opts.nv.colorscheme)
-                    else
-                        require("tokyonight").load() -- fallback to tokyo night if not otherwise specified
-                    end
-                end,
+                colorscheme = opts.nv.colorscheme,
                 icons = {
                     kinds = {
                         Codeium = " "
@@ -81,6 +66,9 @@ return function(opts)
             import = "lazyvim.plugins.extras.lang.rust",
             enabled = opts.nv.lang.rust
         }, {
+            import = "plugins.extras.code.rust-tools",
+            enabled = opts.nv.lang.rust
+        }, {
             import = "lazyvim.plugins.extras.lang.terraform",
             enabled = opts.nv.lang.terraform
         }, {
@@ -97,9 +85,10 @@ return function(opts)
             import = "lazyvim.plugins.extras.test.core",
             enabled = opts.nv.test_support
         }, -- lazyvim UI extension modules
+        -- {
+        --     import = "lazyvim.plugins.extras.ui.edgy"
+        -- }, 
         {
-            import = "lazyvim.plugins.extras.ui.edgy"
-        }, {
             import = "lazyvim.plugins.extras.ui.mini-animate"
         }, -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
         -- lazyvim project extension modules
@@ -128,11 +117,9 @@ return function(opts)
             import = "plugins.extras.ui.dashboard"
         }, {
             import = "plugins.extras.ui.lualine"
-        }, 
-        {
+        }, {
             import = "plugins.extras.ui.neo-tree"
-        }, 
-        {
+        }, {
             import = "plugins.extras.ui.noice"
         }, {
             import = "plugins.extras.ui.scrollview"

@@ -1,8 +1,4 @@
 return {
-
-  -- disable catppuccin
-  { "catppuccin/nvim", name = "catppuccin", enabled = false },
-
   -- load github nvim theme
   { "projekt0n/github-nvim-theme" },
 
@@ -18,11 +14,9 @@ return {
       render = "compact",
     }
   },
-
   -- git diff view
   {
     "sindrets/diffview.nvim",
     cmd = "DiffviewOpen",
   },
-
 }

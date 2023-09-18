@@ -20,20 +20,20 @@ return{
                 gui = "none"
               },
             },
-            offsets = {
-              {
-                filetype = "neo-tree",
-                text = "Neo-tree",
-                highlight = "Directory",
-                text_align = "left",
-              },
-              {
-                filetype = "Outline",
-                text = "Symbols Outline",
-                highlight = "TSType",
-                text_align = "left"
-              }
-            }
+            -- offsets = {
+            --   {
+            --     filetype = "neo-tree",
+            --     text = "Neo-tree",
+            --     highlight = "Directory",
+            --     text_align = "left",
+            --   },
+            --   {
+            --     filetype = "Outline",
+            --     text = "Symbols Outline",
+            --     highlight = "TSType",
+            --     text_align = "left"
+            --   }
+            -- }
           }
         }
       },

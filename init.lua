@@ -1,10 +1,10 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")({
-    -- debug = false,
-    -- defaults = {
-    --     lazy = true
-    --     -- cond = false,
-    -- },
+    debug = false,
+    defaults = {
+        lazy = true
+        -- cond = false,
+    },
     nv = {
         colorscheme = "slate", -- colorscheme setting for either onedark.nvim or github-theme
         copilot_support = false, -- enable copilot extension
