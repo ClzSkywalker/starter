@@ -123,8 +123,9 @@ return function(opts)
             import = "plugins.extras.ui.noice"
         }, {
             import = "plugins.extras.ui.scrollview"
-        }, {
-            import = "plugins.extras.ui.telescope"
+        }, -- utils
+        {
+            import = "plugins.extras.utils.telescope"
         }},
         defaults = {
             -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
