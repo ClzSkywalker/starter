@@ -5,6 +5,7 @@ return {
   --   "nvim-neotest/neotest-go",
   --   "rouge8/neotest-rust",
   -- },
+  event = 'BufEnter',
   opts = {
     adapters = {
       ["neotest-go"] = {},

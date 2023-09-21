@@ -101,13 +101,19 @@ return function(opts)
         {
             import = "plugins.extras.code.cmp"
         }, {
+            import = "plugins.extras.code.codeium",
+            enabled = opts.nv.codeium_support
+        }, {
             import = "plugins.extras.code.lsp"
+        }, {
+            import = "plugins.extras.code.neogen",
+            enabled = true
         }, {
             import = "plugins.extras.code.neotest"
         }, {
             import = "plugins.extras.code.outline"
         }, {
-            import = "plugins.extras.code.tree_sitter"
+            import = "plugins.extras.code.treesitter"
         }, -- ui
         {
             import = "plugins.extras.ui.bufdelete"
