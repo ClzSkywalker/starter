@@ -2,6 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+vim.g.encoding = 'UTF-8'
 vim.opt.relativenumber = false
 
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
