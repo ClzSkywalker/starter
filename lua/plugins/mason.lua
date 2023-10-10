@@ -2,7 +2,7 @@
 return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, { "rust-analyzer" })
+      vim.list_extend(opts.ensure_installed, { "rust-analyzer","delve" })
       opts.ui = {
         icons = {
           package_installed = "󰗠 ",

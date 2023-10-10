@@ -1,4 +1,4 @@
-return{
+return {
     "simrat39/rust-tools.nvim",
     optional = true,
     opts = {
@@ -42,6 +42,18 @@ return{
                 -- The color of the hints
                 highlight = "Comment"
             }
-        }
-    }
+        },
+        -- dap = {
+        --     adapter = {
+        --         type = "executable",
+        --         command = "lldb-vscode",
+        --         name = "rt_lldb",
+        --         args = { "a", "b" }
+        --     },
+        -- },
+    },
+    -- config = function()
+    --     local tool = require("rust-tools")
+    --     tool.dap.adapter.args = { "a", "b" }
+    -- end
 }

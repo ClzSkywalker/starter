@@ -114,6 +114,12 @@ return function(opts)
             import = "plugins.extras.code.outline"
         }, {
             import = "plugins.extras.code.treesitter"
+        },     
+        -- plugin lang
+        {
+            import = "plugins.extras.code.lang.go",
+        },{
+            import = "plugins.extras.code.lang.rust",
         }, -- ui
         {
             import = "plugins.extras.ui.bufdelete"
