@@ -3,7 +3,8 @@
 -- Add any additional keymaps here
 
 if vim.fn.executable("btop") == 1 then
-    -- btop
-    vim.keymap.set("n", "<leader>xb", function() require("lazyvim.util").float_term({ "btop" }, { esc_esc = false, ctrl_hjkl = false }) end, { desc = "btop" })
-  end
-  
+  -- btop
+  vim.keymap.set("n", "<leader>xb",
+    function() require("lazyvim.util").float_term({ "btop" }, { esc_esc = false, ctrl_hjkl = false }) end,
+    { desc = "btop" })
+end
