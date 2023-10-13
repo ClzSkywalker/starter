@@ -22,3 +22,7 @@ if vim.g.neovide then
   vim.g.neovide_floating_opacity = 90
   vim.opt.guifont = 'FiraCode Nerd Font:h13'
 end
+
+-- lsp autoformat
+vim.g.autoformat=true
+vim.b.autoformat=true

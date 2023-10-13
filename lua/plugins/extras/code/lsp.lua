@@ -3,10 +3,9 @@
 return {
     "neovim/nvim-lspconfig",
     opts = {
-        autoformat = true,
         servers = {
             rust_analyzer = {},
-            go = {},
+            gopls = {},
             bufls={},
             jsonls={},
             taplo={},

@@ -2,8 +2,8 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     -- bootstrap lazy.nvim
     -- stylua: ignore
-    vim.fn.system({"git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
-                   lazypath})
+    vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
+        lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
@@ -11,37 +11,38 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 return function(opts)
     opts = vim.tbl_deep_extend("force", {
         spec = { -- lazyvim copilot extension modules
-        {
-            -- import LazyVim plugins
-            "LazyVim/LazyVim",
-            import = "lazyvim.plugins",
-            opts = {
-                colorscheme = opts.nv.colorscheme,
-                icons = {
-                    kinds = {
-                        Codeium = " "
+            {
+                -- import LazyVim plugins
+                "LazyVim/LazyVim",
+                import = "lazyvim.plugins",
+                opts = {
+                    colorscheme = opts.nv.colorscheme,
+                    icons = {
+                        kinds = {
+                            Codeium = " "
+                        }
                     }
                 }
-            }
-        }, {
-            import = "lazyvim.plugins.extras.coding.copilot",
-            enabled = opts.nv.copilot_support
-        }, -- lazyvim yanky extension modules
-        {
-            import = "lazyvim.plugins.extras.coding.yanky"
-        }, -- lazyvim dap core extension modules
-        {
-            import = "lazyvim.plugins.extras.dap.core",
-            enabled = opts.nv.dap_support
-        }, -- debugger specific extension modules
-        {
-            import = "lazyvim.plugins.extras.dap.nlua",
-            enabled = opts.nv.lang.lua
-        }, -- core language specific extension modules
-        {
-            import = "lazyvim.plugins.extras.lang.clangd",
-            enabled = opts.nv.lang.clangd
-        }, {
+            },
+            {
+                import = "lazyvim.plugins.extras.coding.copilot",
+                enabled = opts.nv.copilot_support
+            }, -- lazyvim yanky extension modules
+            {
+                import = "lazyvim.plugins.extras.coding.yanky"
+            }, -- lazyvim dap core extension modules
+            {
+                import = "lazyvim.plugins.extras.dap.core",
+                enabled = opts.nv.dap_support
+            }, -- debugger specific extension modules
+            {
+                import = "lazyvim.plugins.extras.dap.nlua",
+                enabled = opts.nv.lang.lua
+            }, -- core language specific extension modules
+            {
+                import = "lazyvim.plugins.extras.lang.clangd",
+                enabled = opts.nv.lang.clangd
+            }, {
             import = "lazyvim.plugins.extras.lang.cmake",
             enabled = opts.nv.lang.clangd
         }, {
@@ -81,26 +82,26 @@ return function(opts)
             import = "plugins.extras.lang.nodejs",
             enabled = opts.nv.lang.nodejs
         }, -- lazyvim test core extension modules
-        {
-            import = "lazyvim.plugins.extras.test.core",
-            enabled = opts.nv.test_support
-        }, -- lazyvim UI extension modules
-        -- {
-        --     import = "lazyvim.plugins.extras.ui.edgy"
-        -- }, 
-        {
-            import = "lazyvim.plugins.extras.ui.mini-animate"
-        }, -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
-        -- lazyvim project extension modules
-        {
-            import = "lazyvim.plugins.extras.util.project"
-        }, -- import/override with your plugins
-        {
-            import = "plugins"
-        }, -- code
-        {
-            import = "plugins.extras.code.cmp"
-        }, {
+            {
+                import = "lazyvim.plugins.extras.test.core",
+                enabled = opts.nv.test_support
+            }, -- lazyvim UI extension modules
+            -- {
+            --     import = "lazyvim.plugins.extras.ui.edgy"
+            -- },
+            {
+                import = "lazyvim.plugins.extras.ui.mini-animate"
+            }, -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
+            -- lazyvim project extension modules
+            {
+                import = "lazyvim.plugins.extras.util.project"
+            }, -- import/override with your plugins
+            {
+                import = "plugins"
+            }, -- code
+            {
+                import = "plugins.extras.code.cmp"
+            }, {
             import = "plugins.extras.code.codeium",
             enabled = opts.nv.codeium_support
         }, {
@@ -114,16 +115,16 @@ return function(opts)
             import = "plugins.extras.code.outline"
         }, {
             import = "plugins.extras.code.treesitter"
-        },     
-        -- plugin lang
-        {
-            import = "plugins.extras.code.lang.go",
-        },{
+        },
+            -- plugin lang
+            {
+                import = "plugins.extras.code.lang.go",
+            }, {
             import = "plugins.extras.code.lang.rust",
         }, -- ui
-        {
-            import = "plugins.extras.ui.bufdelete"
-        }, {
+            {
+                import = "plugins.extras.ui.bufdelete"
+            }, {
             import = "plugins.extras.ui.bufferline"
         }, {
             import = "plugins.extras.ui.dashboard"
@@ -136,9 +137,9 @@ return function(opts)
         }, {
             import = "plugins.extras.ui.scrollview"
         }, -- utils
-        {
-            import = "plugins.extras.utils.telescope"
-        }},
+            {
+                import = "plugins.extras.utils.telescope"
+            } },
         defaults = {
             -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
             -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
@@ -149,7 +150,7 @@ return function(opts)
             -- version = "*", -- try installing the latest stable version for plugins that support semver
         },
         install = {
-            colorscheme = {"tokyonight", "habamax"}
+            colorscheme = { "tokyonight", "habamax" }
         },
         checker = {
             enabled = true
@@ -161,10 +162,10 @@ return function(opts)
             },
             rtp = {
                 -- disable some rtp plugins
-                disabled_plugins = {"gzip", -- "matchit",
-                -- "matchparen",
-                -- "netrwPlugin",
-                "tarPlugin", "tohtml", "tutor", "zipPlugin"}
+                disabled_plugins = { "gzip", -- "matchit",
+                    -- "matchparen",
+                    -- "netrwPlugin",
+                    "tarPlugin", "tohtml", "tutor", "zipPlugin" }
             }
         }
     }, opts or {})
