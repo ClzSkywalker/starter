@@ -26,3 +26,35 @@ end
 -- lsp autoformat
 vim.g.autoformat=true
 vim.b.autoformat=true
+
+-- 系统剪切板
+-- vim.g.clipboard='unnamedplus'
+-- if vim.fn.has('wsl') then
+-- 	vim.g.clipboard = {
+-- 		name = 'WslClipboard',
+-- 		copy = {
+-- 			['+'] = '/mnt/c/Windows/System32/clip.exe',
+-- 			['*'] = '/mnt/c/Windows/System32/clip.exe'
+-- 		},
+-- 		paste = {
+-- 			['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+-- 			['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+-- 		},
+-- 		cache_enabled = 0,
+-- 	}
+-- end
+
+-- if vim.fn.has('wsl') then
+-- 	vim.g.clipboard = {
+-- 		name = 'WslClipboard',
+-- 		copy = {
+-- 			['+'] = 'win32yank.exe -i --crlf',
+-- 			['*'] = 'win32yank.exe -i --crlf'
+-- 		},
+-- 		paste = {
+-- 			['+'] = 'win32yank.exe -o --lf',
+-- 			['*'] = 'win32yank.exe -o --lf',
+-- 		},
+-- 		cache_enabled = 0,
+-- 	}
+-- end
