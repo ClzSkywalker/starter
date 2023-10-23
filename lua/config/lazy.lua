@@ -81,7 +81,11 @@ return function(opts)
         }, {
             import = "plugins.extras.lang.nodejs",
             enabled = opts.nv.lang.nodejs
-        }, -- lazyvim test core extension modules
+        }, {
+            import = "plugins.extras.code.flutter-tools",
+            enabled = opts.nv.lang.flutter
+        },
+         -- lazyvim test core extension modules
             {
                 import = "lazyvim.plugins.extras.test.core",
                 enabled = opts.nv.test_support

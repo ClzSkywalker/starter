@@ -4,6 +4,19 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-        vim.list_extend(opts.ensure_installed, {"comment", "rust", "go", "http","proto"})
-    end
+        vim.list_extend(opts.ensure_installed, { "comment", "rust", "go", "http", "proto" }) --, "dart"
+        require('nvim-treesitter.configs').setup {
+            indent = {
+              enable = true,
+              disable = { 'dart' }
+            }
+          }
+          
+    end,
+    -- indent = {
+    --     enable = true,
+    --     -- https://github.com/akinsho/flutter-tools.nvim/issues/267#issuecomment-1616728174
+    --     -- NOTE: enabling indentation significantly slows down editing in Dart files
+    --     disable = {'dart'}
+    -- }
 }

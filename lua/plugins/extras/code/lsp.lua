@@ -6,13 +6,18 @@ return {
         servers = {
             rust_analyzer = {},
             gopls = {},
-            bufls={},
-            jsonls={},
-            taplo={},
-            yamlls={}
+            bufls = {},
+            jsonls = {},
+            taplo = {},
+            yamlls = {},
+            -- dart = {
+            -- }
         },
-        diagnostics = {
-            update_in_insert = true
-        }
+        -- diagnostics = {
+        --     update_in_insert = true
+        -- },
+        inlay_hints = {
+            enabled = true,
+          },
     }
 }
