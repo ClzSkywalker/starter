@@ -9,22 +9,29 @@ return {
         },
         config = true,
     },
-    -- {
-    --     'RobertPietraru/bloc.nvim',
-    --     keys = { {
-    --         "<leader>cbc",
-    --         "<cmd>require('bloc').create_cubit('cubit_name', 'parent/folder/relative/path')<cr>",
-    --         -- function ()
-    --         --     require('bloc').create_cubit('cubit_name', 'parent/folder/relative/path')
-    --         -- end,
-    --         desc = "bloc cubit"
-    --     }, {
-    --         "<leader>cbb",
-    --         "<cmd>require('bloc').create_bloc('bloc_name', 'parent/folder/relative/path')<cr>",
-    --         -- function ()
-    --         --     require('bloc').create_bloc('bloc_name', 'parent/folder/relative/path')
-    --         -- end,
-    --         desc = "bloc bloc"
-    --     } },
-    -- }
+    {
+        'ClzSkywalker/bloc.nvim',
+        keys = { {
+            "<leader>cb",
+            desc = "flutter bloc"
+        }, {
+            "<leader>cbc",
+            function()
+                local state = require("neo-tree.sources.manager").get_state("filesystem")
+                local node = state.tree:get_node()
+                local inputstr = vim.fn.input("Cubit Name:", "")
+                require('bloc').create_cubit(inputstr, node.path .. '/')
+            end,
+            desc = "bloc cubit"
+        }, {
+            "<leader>cbb",
+            function()
+                local state = require("neo-tree.sources.manager").get_state("filesystem")
+                local node = state.tree:get_node()
+                local inputstr = vim.fn.input("Bloc Name:", "")
+                require('bloc').create_bloc(inputstr, node.path .. '/')
+            end,
+            desc = "bloc bloc"
+        } },
+    }
 }
