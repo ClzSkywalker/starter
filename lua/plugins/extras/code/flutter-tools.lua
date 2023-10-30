@@ -7,8 +7,47 @@ return {
             'nvim-lua/plenary.nvim',
             'stevearc/dressing.nvim', -- optional for vim.ui.select
         },
-        config = true,
-    },
+        -- config = true,
+        opts = {
+            fvm = true,
+            ui = {
+                border = "rounded",
+                notification_style = "native",
+            },
+            decorations = {
+                statusline = {
+                    app_version = false,
+                    device = true,
+                },
+            },
+            widget_guides = {
+                enabled = true,
+            },
+            closing_tags = {
+                highlight = "ErrorMsg",
+                prefix = "//",
+                enabled = true,
+            },
+            lsp = {
+                color = {
+                    enabled = false,
+                    background = false,
+                    foreground = false,
+                    virtual_text = true,
+                    virtual_text_str = "■",
+                },
+                settings = {
+                    showTodos = true,
+                    completeFunctionCalls = true,
+                    enableSnippets = true,
+                },
+            },
+            debugger = {
+                enabled = true,
+                run_via_dap = true,
+            },
+        },
+    }
     -- {
     --     'RobertPietraru/bloc.nvim',
     --     keys = { {
