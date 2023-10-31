@@ -26,6 +26,8 @@ end
 -- lsp autoformat
 vim.g.autoformat=true
 vim.b.autoformat=true
+-- 解决nvim不在当前目录的问题：https://github.com/LazyVim/LazyVim/issues/1912
+vim.g.root_spec = { "cwd" }
 
 -- 系统剪切板
 -- vim.g.clipboard='unnamedplus'
