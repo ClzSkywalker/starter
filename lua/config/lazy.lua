@@ -85,7 +85,7 @@ return function(opts)
             import = "plugins.extras.code.flutter-tools",
             enabled = opts.nv.lang.flutter
         },
-         -- lazyvim test core extension modules
+            -- lazyvim test core extension modules
             {
                 import = "lazyvim.plugins.extras.test.core",
                 enabled = opts.nv.test_support
@@ -126,9 +126,9 @@ return function(opts)
             }, {
             import = "plugins.extras.code.lang.rust",
         },
-        {
-            import = "plugins.extras.code.lang.dart",
-        }, -- ui
+            {
+                import = "plugins.extras.code.lang.dart",
+            }, -- ui
             {
                 import = "plugins.extras.ui.bufdelete"
             }, {
@@ -144,9 +144,9 @@ return function(opts)
         }, {
             import = "plugins.extras.ui.scrollview"
         }, -- utils
-            -- {
-            --     import = "plugins.extras.utils.telescope"
-            -- }
+            {
+                import = "plugins.extras.utils.telescope"
+            }
         },
         defaults = {
             -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
