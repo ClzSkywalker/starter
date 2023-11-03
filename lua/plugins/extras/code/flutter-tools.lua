@@ -10,17 +10,8 @@ return {
         config = true,
         -- config = true,
         opts = {
-            fvm = true,
-            ui = {
-                border = "rounded",
-                notification_style = "native",
-            },
-            decorations = {
-                statusline = {
-                    app_version = false,
-                    device = true,
-                },
-            },
+            flutter_path="/opt/flutter/bin/flutter",
+            fvm = false,
             widget_guides = {
                 enabled = true,
             },
@@ -28,6 +19,16 @@ return {
                 highlight = "ErrorMsg",
                 prefix = "//",
                 enabled = true,
+            },
+            ui = {
+                border = "rounded",
+                notification_style = "plugin",
+            },
+            decorations = {
+                statusline = {
+                    app_version = false,
+                    device = true,
+                },
             },
             lsp = {
                 color = {
