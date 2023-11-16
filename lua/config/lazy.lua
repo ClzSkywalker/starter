@@ -28,9 +28,9 @@ return function(opts)
                 import = "lazyvim.plugins.extras.coding.copilot",
                 enabled = opts.nv.copilot_support
             }, -- lazyvim yanky extension modules
-            {
-                import = "lazyvim.plugins.extras.coding.yanky"
-            }, -- lazyvim dap core extension modules
+            -- {
+            --     import = "lazyvim.plugins.extras.coding.yanky"
+            -- }, -- lazyvim dap core extension modules
             {
                 import = "lazyvim.plugins.extras.dap.core",
                 enabled = opts.nv.dap_support
@@ -38,58 +38,74 @@ return function(opts)
             {
                 import = "lazyvim.plugins.extras.dap.nlua",
                 enabled = opts.nv.lang.lua
-            }, -- core language specific extension modules
+            }, 
+            -- core language specific extension modules
             {
                 import = "lazyvim.plugins.extras.lang.clangd",
                 enabled = opts.nv.lang.clangd
-            }, {
-            import = "lazyvim.plugins.extras.lang.cmake",
-            enabled = opts.nv.lang.clangd
-        }, {
-            import = "lazyvim.plugins.extras.lang.docker",
-            enabled = opts.nv.lang.docker
-        }, {
-            import = "lazyvim.plugins.extras.lang.elixir",
-            enabled = opts.nv.lang.elixir
-        }, {
-            import = "lazyvim.plugins.extras.lang.go",
-            enabled = opts.nv.lang.go
-        }, {
-            import = "lazyvim.plugins.extras.lang.java",
-            enabled = opts.nv.lang.java
-        }, {
-            import = "lazyvim.plugins.extras.lang.python",
-            enabled = opts.nv.lang.python
-        }, {
-            import = "lazyvim.plugins.extras.lang.ruby",
-            enabled = opts.nv.lang.ruby
-        }, {
-            import = "lazyvim.plugins.extras.lang.rust",
-            enabled = opts.nv.lang.rust
-        }, {
-            import = "plugins.extras.code.rust-tools",
-            enabled = opts.nv.lang.rust
-        }, {
-            import = "lazyvim.plugins.extras.lang.terraform",
-            enabled = opts.nv.lang.terraform
-        }, {
-            import = "lazyvim.plugins.extras.lang.tex",
-            enabled = opts.nv.lang.tex
-        }, {
-            import = "lazyvim.plugins.extras.lang.yaml",
-            enabled = opts.nv.lang.yaml
-        }, {
-            import = "plugins.extras.lang.nodejs",
-            enabled = opts.nv.lang.nodejs
-        }, {
-            import = "plugins.extras.code.flutter-tools",
-            enabled = opts.nv.lang.flutter
-        },
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.cmake",
+                enabled = opts.nv.lang.clangd
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.docker",
+                enabled = opts.nv.lang.docker
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.elixir",
+                enabled = opts.nv.lang.elixir
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.go",
+                enabled = opts.nv.lang.go
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.java",
+                enabled = opts.nv.lang.java
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.python",
+                enabled = opts.nv.lang.python
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.ruby",
+                enabled = opts.nv.lang.ruby
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.rust",
+                enabled = opts.nv.lang.rust
+            },
+            {
+                import = "plugins.extras.code.rust-tools",
+                enabled = opts.nv.lang.rust
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.terraform",
+                enabled = opts.nv.lang.terraform
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.tex",
+                enabled = opts.nv.lang.tex
+            },
+            {
+                import = "lazyvim.plugins.extras.lang.yaml",
+                enabled = opts.nv.lang.yaml
+            },
+            {
+                import = "plugins.extras.lang.nodejs",
+                enabled = opts.nv.lang.nodejs
+            },
+            {
+                import = "plugins.extras.code.flutter-tools",
+                enabled = opts.nv.lang.flutter
+            },
             -- lazyvim test core extension modules
             {
                 import = "lazyvim.plugins.extras.test.core",
                 enabled = opts.nv.test_support
-            }, -- lazyvim UI extension modules
+            },
+            -- lazyvim UI extension modules
             -- {
             --     import = "lazyvim.plugins.extras.ui.edgy"
             -- },
@@ -102,51 +118,80 @@ return function(opts)
             }, -- import/override with your plugins
             {
                 import = "plugins"
-            }, -- code
+            }, 
+            {
+                import = "plugins.coding"
+            },
+            {
+                import = "plugins.disable"
+            },
+            {
+                import = "plugins.mason"
+            },
+            {
+                import = "plugins.ui"
+            },
+            -- code
             {
                 import = "plugins.extras.code.cmp"
-            }, {
-            import = "plugins.extras.code.codeium",
-            enabled = opts.nv.codeium_support
-        }, {
-            import = "plugins.extras.code.lsp"
-        }, {
-            import = "plugins.extras.code.neogen",
-            enabled = true
-        }, {
-            import = "plugins.extras.code.neotest"
-        }, {
-            import = "plugins.extras.code.outline"
-        }, {
-            import = "plugins.extras.code.treesitter"
-        },
-            -- plugin lang
+            },
+            {
+                import = "plugins.extras.code.codeium",
+                enabled = opts.nv.codeium_support
+            },
+            {
+                import = "plugins.extras.code.lsp"
+            },
+            {
+                import = "plugins.extras.code.neogen",
+                enabled = true
+            },
+            {
+                import = "plugins.extras.code.neotest"
+            },
+            {
+                import = "plugins.extras.code.outline"
+            },
+            {
+                import = "plugins.extras.code.treesitter"
+            },
+            -- -- plugin lang
             {
                 import = "plugins.extras.code.lang.go",
-            }, {
-            import = "plugins.extras.code.lang.rust",
-        },
+            },
+            {
+                import = "plugins.extras.code.lang.rust",
+            },
             {
                 import = "plugins.extras.code.lang.dart",
             }, -- ui
             {
                 import = "plugins.extras.ui.bufdelete"
-            }, {
-            import = "plugins.extras.ui.bufferline"
-        }, {
-            import = "plugins.extras.ui.dashboard"
-        }, {
-            import = "plugins.extras.ui.lualine"
-        }, {
-            import = "plugins.extras.ui.neo-tree"
-        }, {
-            import = "plugins.extras.ui.noice"
-        }, {
-            import = "plugins.extras.ui.scrollview"
-        }, -- utils
+            },
+            {
+                import = "plugins.extras.ui.bufferline"
+            },
+            {
+                import = "plugins.extras.ui.dashboard"
+            },
+            {
+                import = "plugins.extras.ui.lualine"
+            },
+            {
+                import = "plugins.extras.ui.neo-tree"
+            },
+            {
+                import = "plugins.extras.ui.noice"
+            },
+            {
+                import = "plugins.extras.ui.scrollview"
+            }, -- utils
             {
                 import = "plugins.extras.utils.telescope"
-            }
+            },
+            -- {
+            --     import = "plugins.extras.utils.yanky"
+            -- }
         },
         defaults = {
             -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
