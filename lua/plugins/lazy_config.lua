@@ -29,6 +29,11 @@ return {
             formatters_by_ft = {
                 go = { "goimports-reviser" },
             },
+            formatters={
+                ["goimports-reviser"]= {
+                    prepend_args = { "-rm-unused","-imports-order","std,general,company,project,blanked" }
+                }
+            }
         },
     },
     {
